@@ -1,0 +1,19 @@
+url                 --> https://alabamatienda.com.ar/search/page ['canonical_url']
+id                  --> https://alabamatienda.com.ar/search/page ['id']
+name                --> https://alabamatienda.com.ar/search/page ['name']['es']
+description         --> https://alabamatienda.com.ar/search/page ['seo_description'] ;usually empty tho
+category_list       --> https://alabamatienda.com.ar/search/page ['categories'][idx]['name']
+images              --> https://alabamatienda.com.ar/search/page ['images'][idx]['src']
+variants            --> https://alabamatienda.com.ar/search/page ['variants'][idx]
+
+
+id                      --> variants
+group_id                --> ^^parent
+price                   --> variants[price]
+list_price              --> if ['has_promotional_price'] then variants['compare_at_price']
+discount_percentage     --> https://alabamatienda.com.ar/search/page ['html'] con una Regex o Xpath
+available               --> https://alabamatienda.com.ar/search/page ['html'] con una Regex o Xpath
+options                 --> variants ['options']
+
+name                    --> options ['name']
+value                   --> options ['value']
