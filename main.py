@@ -4,6 +4,7 @@ import json
 import config
 import time
 import random
+from pathlib import Path
 from lxml import html
 from curl_cffi import requests
 from log import Log
@@ -84,6 +85,7 @@ class Crawler:
                                     'data': []
                                 })
                             flag=False
+                            break
                         try:
                             products = data.get('nube_sdk_products')
                             producsthtml = None
@@ -181,9 +183,14 @@ class Crawler:
         return producto    
 
     def save_data(self):
-
-        df = pd.DataFrame(self._records,index=False)
-        df.to_json('./output/output.json')
+        try:
+            #df = pd.DataFrame(self._records,index=False)
+            #df.to_json('output/output.json')
+            Path('output').mkdir(exist_ok=True,parents=False)
+            with open("output/output.json", encoding="utf-8", mode="w") as f:
+                json.dump(self._records, f)
+        except:
+            logger.exception('Error al guardar datos')
 
 
     def run(self):
