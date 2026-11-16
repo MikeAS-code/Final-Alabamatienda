@@ -136,6 +136,7 @@ class ProductOut:
             "variants": self.variants,
         }
 
+    #Para el set()
     def __hash__(self):
         return self.id
         pass
@@ -193,8 +194,6 @@ class Discovery:
                         #print('ward')
                         prod.append_html_data(html_data)
                         continue
-
-            #print(f"Se obtuvo: {prod.to_dict()}")
             has_next = data.get('has_next')
         else:
             raise ValueError(f"Request a {url} dio un status code incorrecto: response.status_code = {response.status_code}")
