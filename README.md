@@ -84,7 +84,37 @@ El archivo deberá contener una lista de objetos, donde cada objeto represente u
 
 ### Estructura general
 
-    [  {    "query": "zapatillas",    "data": [      {        "url": "https://example.com/producto",        "id": "12345",        "name": "Zapatillas deportivas",        "description": "Descripción del producto",        "category_list": [          "Calzado",          "Zapatillas"        ],        "images": [          "https://example.com/image1.jpg"        ],        "variants": [          {            "id": "VAR-001",            "group_id": "12345",            "price": 45000.0,            "list_price": 50000.0,            "discount_percentage": 10,            "available": true,            "options": [              {                "name": "Talle",                "value": "40"              }            ]          }        ]      }    ]  },  {    "query": "ollas",    "data": []  }]
+    [  {    "query": "zapatillas",    
+            "data": [  
+                {
+                    "url": "https://example.com/producto",        
+                    "id": "12345",        
+                    "name": "Zapatillas deportivas",       
+                    "description": "Descripción del producto",        
+                    "category_list": [        
+                        "Calzado",          
+                        "Zapatillas"       
+                        ],        
+                    "images": [          "https://example.com/image1.jpg"        ],        "variants": [    
+                        {           
+                            "id": "VAR-001",            
+                            "group_id": "12345",            
+                            "price": 45000.0,            
+                            "list_price": 50000.0,           
+                            "discount_percentage": 10,           
+                            "available": true,            
+                            "options": [              
+                                {                
+                                    "name": "Talle",                
+                                    "value":"40"              
+                                }            
+                            ]
+                        }        
+                        ]     
+                }    
+            ]  
+            },  
+            {    "query": "ollas",    "data": []  }]
 
 **Importante:** Los valores del ejemplo son ilustrativos y no representan productos reales del sitio.
 
@@ -209,7 +239,21 @@ No se permite inventar información para completar campos faltantes.
 --------------------------------------
 
 El proyecto deberá respetar la siguiente organización:
-    project/├── main.py├── config.py├── log.py├── web_driver.py├── input/│   └── product.csv├── output/│   └── output.json├── requirements.txt├── .gitignore├── .env└── .env.example
+
+    project/
+    ├── main.py
+    ├── config.py
+    ├── log.py
+    ├── web_driver.py
+    ├── input/
+    │   └── product.csv
+    ├── output/
+    │   └── output.json
+    ├── requirements.txt
+    ├── .gitignore
+    ├── .env
+    └── .env.example
+
 
 ### Responsabilidades de los archivos
 
