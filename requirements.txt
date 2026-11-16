@@ -1,0 +1,4 @@
+python-dotenv
+pandas
+lxml
+curl_cffi
